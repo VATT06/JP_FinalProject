@@ -2,11 +2,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+public enum spicies{Cat,Dog,Bird};
 public class Animal : MonoBehaviour
 {
     //ABSTRACTION...
 
-    string spicies;
     Color color;
     int _age;
     public int age
