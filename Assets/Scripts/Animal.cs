@@ -1,18 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Animal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //ABSTRACTION...
+
+    string spicies;
+    Color color;
+    int _age;
+    public int age
     {
-        
+        get { return _age; }
+        set
+        {
+            if (age > 0 && age < 13)
+            {
+                _age = value;
+            }
+            else
+            {
+                print("VALOR INCORRECTO");
+            }
+        }
+    }
+    string sound;
+    string food;
+    [SerializeField] Color animalColor;
+    [SerializeField] TMP_Text spiciesShower;
+    [SerializeField] Button animalData;
+
+
+
+    public void Eat(string food)
+    {
+        print($"IT'S EATING {food.ToUpper()}");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MakeSound(string sound)
     {
-        
+        print($"{sound.ToUpper()}");
+    }
+
+    public void Breath()
+    {
+        print("Breathing,Breathing,Breathing,...");
+    }
+
+    public void Movement()
+    {
+        print("Moving,Moving,Moving...");
     }
 }
